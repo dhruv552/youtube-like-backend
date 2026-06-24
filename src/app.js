@@ -17,6 +17,9 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static('public'));
 
 // Routes will go here
-// app.use('/api/users', userRoutes);
+
+import healthCheckRoutes from './routes/healthcheck.routes.js';
+app.use("/api/v1/healthcheck", healthCheckRoutes);
+
 
 export default app;
